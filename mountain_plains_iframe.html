@@ -25,19 +25,23 @@
             width: 50%; /* Adjust the width as needed */
             height: 70%; /* Adjust the height as needed */
             border: none;
+            display: none; /* Hide iframe by default */
+        }
+        .mobile-image {
+            display: none; /* Hide image by default */
+        }
+        @media only screen and (min-width: 1024px) {
+            /* Show iframe for non-mobile devices */
+            .centered-iframe {
+                display: block;
+            }
         }
         @media only screen and (max-width: 1023px) {
-            /* Adjustments for mobile */
-            .center-container {
-                align-items: flex-start; /* Align items to the top */
-            }
-            .centered-iframe {
+            /* Show image for mobile devices */
+            .mobile-image {
+                display: block;
                 width: 75%; /* Adjust the width for mobile */
-                height: 100%; /* Adjust the height for mobile */
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                clip-path: polygon(0% 37%, 100% 37%, 100% 63%, 0% 63%);
+                height: auto; /* Adjust the height for mobile */
             }
         }
     </style>
@@ -45,6 +49,8 @@
 <body>
     <div class="center-container">
         <iframe class="centered-iframe" id="myIframe" src="https://glencorahaskins.github.io/bbb/mountain_plains_bbbrc_map_webv.html" sandbox="allow-scripts allow-same-origin" scrolling="no"></iframe>
+        <!-- Placeholder image for mobile -->
+        <img class="centered-image mobile-image" src="https://glencorahaskins.github.io/bbb/mountain_plains_bbbrc_map_static.png" alt="Map Image">
     </div>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </body>

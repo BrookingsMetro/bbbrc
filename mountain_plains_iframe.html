@@ -44,16 +44,8 @@
             // Adjust the size of the iframe based on the zoom level
             const initialWidth = 50; // Initial width percentage
             const initialHeight = 70; // Initial height percentage
-
-            // Check if the device is a mobile device (screen width less than 768px)
-            if (window.innerWidth < 768) {
-                iframe.style.width = '100%';
-                iframe.style.height = '100%';
-            } else {
-                // For larger screens, adjust based on the zoom level
-                iframe.style.width = initialWidth * zoomLevel + '%';
-                iframe.style.height = initialHeight * zoomLevel + '%';
-            }
+            iframe.style.width = initialWidth * zoomLevel + '%';
+            iframe.style.height = initialHeight * zoomLevel + '%';
         }
 
         // Call the sync function on page load and resize

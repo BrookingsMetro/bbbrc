@@ -7,7 +7,7 @@ class WNYFileEmbed extends HTMLElement {
 
   async fetchFile() {
     try {
-      const response = await fetch('https://raw.githubusercontent.com/glencorahaskins/bbb/main/wny_bbbrc_map_contained.html');
+      const response = await fetch('https://raw.githubusercontent.com/glencorahaskins/bbb/main/mountain_plains_iframe.html');
       const content = await response.text();
       this.renderEmbedCode(content);
     } catch (error) {

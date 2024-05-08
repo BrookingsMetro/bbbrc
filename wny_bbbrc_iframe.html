@@ -25,7 +25,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 50%; /* Initial width */
+            width: 70%; /* Initial width */
             height: 70%; /* Initial height */
             border: none; /* Remove border for iframe */
         }
@@ -62,7 +62,7 @@
             const zoomLevel = window.devicePixelRatio; // Get the device pixel ratio as an approximation of the zoom level
 
             // Adjust the size of the iframe based on the zoom level
-            const initialWidth = 50; // Initial width percentage
+            const initialWidth = 70; // Initial width percentage
             const initialHeight = 70; // Initial height percentage
             iframe.style.width = initialWidth * zoomLevel + '%';
             iframe.style.height = initialHeight * zoomLevel + '%';

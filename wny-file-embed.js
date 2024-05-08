@@ -7,7 +7,7 @@ class GithubFileEmbed extends HTMLElement {
 
   async fetchFile() {
     try {
-      const response = await fetch('https://raw.githubusercontent.com/gh/bbb/main/wny_bbbrc_map_webv.html');
+      const response = await fetch('https://glencorahaskins.github.io/bbb/wny_bbbrc_map_webv.html');
       const content = await response.text();
       this.renderEmbedCode(content);
     } catch (error) {

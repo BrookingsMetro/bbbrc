@@ -1,5 +1,5 @@
-// wny-file-embed.js
-class WNYFileEmbed extends HTMLElement {
+// github-file-embed.js
+class GithubFileEmbed extends HTMLElement {
   constructor() {
     super();
     this.fetchFile();
@@ -7,7 +7,7 @@ class WNYFileEmbed extends HTMLElement {
 
   async fetchFile() {
     try {
-      const response = await fetch('https://raw.githubusercontent.com/glencorahaskins/bbb/main/mountain_plains_iframe.html');
+      const response = await fetch('https://raw.githubusercontent.com/gh/bbb/main/wny_bbbrc_map_webv.html');
       const content = await response.text();
       this.renderEmbedCode(content);
     } catch (error) {
@@ -16,11 +16,14 @@ class WNYFileEmbed extends HTMLElement {
   }
 
   renderEmbedCode(content) {
-    this.innerHTML = `
-      <div style="min-height:514px">
-        ${content}
-      </div>`;
+    const wrapperDiv = document.createElement('div');
+    wrapperDiv.style.minHeight = '514px';
+
+    // Insert content from the fetched file
+    wrapperDiv.innerHTML = content;
+
+    this.appendChild(wrapperDiv);
   }
 }
 
-customElements.define('wny-file-embed', WNYFileEmbed);
+customElements.define('github-file-embed', GithubFileEmbed);

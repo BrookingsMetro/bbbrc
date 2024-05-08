@@ -1,5 +1,5 @@
-// github-file-embed.js
-class GithubFileEmbed extends HTMLElement {
+// wny-file-embed.js
+class WNYFileEmbed extends HTMLElement {
   constructor() {
     super();
     this.fetchFile();
@@ -16,14 +16,11 @@ class GithubFileEmbed extends HTMLElement {
   }
 
   renderEmbedCode(content) {
-    const wrapperDiv = document.createElement('div');
-    wrapperDiv.style.minHeight = '514px';
-
-    // Insert content from the fetched file
-    wrapperDiv.innerHTML = content;
-
-    this.appendChild(wrapperDiv);
+    this.innerHTML = `
+      <div style="min-height:514px">
+        ${content}
+      </div>`;
   }
 }
 
-customElements.define('github-file-embed', GithubFileEmbed);
+customElements.define('wny-file-embed', WNYFileEmbed);
